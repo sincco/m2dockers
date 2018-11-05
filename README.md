@@ -1,15 +1,8 @@
 ![Magento 2](https://cdn.rawgit.com/rafaelstz/magento2-snippets-visualstudio/master/images/icon.png)
 
-#  Magento 2 Docker to Development
+#  Magento 2 Docker for Development
 
 ### Apache 2.4 + PHP 7.1 + OPCache + MariaDB + N98 Magerun 2 + XDebug + Redis
-
-[![Build Status](https://travis-ci.org/clean-docker/Magento2.svg?branch=master)](https://travis-ci.org/clean-docker/Magento2)
-[![Docker Build](https://img.shields.io/docker/build/rafaelcgstz/magento2.svg)](https://hub.docker.com/r/rafaelcgstz/magento2/)
-[![Docker Pulls](https://img.shields.io/docker/pulls/rafaelcgstz/magento2.svg)](https://hub.docker.com/r/rafaelcgstz/magento2/)
-[![Docker Starts](https://img.shields.io/docker/stars/rafaelcgstz/magento2.svg)](https://hub.docker.com/r/rafaelcgstz/magento2/)
-[![Build Status](https://images.microbadger.com/badges/image/rafaelcgstz/magento2.svg)](https://microbadger.com/images/rafaelcgstz/magento2)
-[![Releases](https://img.shields.io/github/release/clean-docker/Magento2.svg)](https://github.com/clean-docker/Magento2/releases)
 
 ### Requirements
 
@@ -58,7 +51,7 @@ Enjoy your new panels!
 
 | Commands  | Description  | Options & Examples |
 |---|---|---|
-| `./init`  | If you didn't use the CURL setup command above, please use this command changing the name of the project.  | `./init MYMAGENTO2` |
+| `./init`  | If you didn't use the CURL setup command above, please use this command changing the name of the project.  | `./init M2PROJECT` |
 | `./start`  | If you continuing not using the CURL you can start your container manually  | |
 | `./stop`  | Stop your project containers  | |
 | `./kill`  | Stops containers and removes containers, networks, volumes, and images created to the specific project  | |
@@ -84,4 +77,4 @@ or to run in the background using detached mode
 
 ### License
 
-MIT © 2018 [Rafael Corrêa Gomes](https://github.com/rafaelstz/) and [contributors](https://github.com/clean-docker/Magento2/graphs/contributors).
+[Iván Miranda](https://ivanmiranda.me) [based on](https://hub.docker.com/r/rafaelcgstz/magento2/) https://hub.docker.com/r/rafaelcgstz/magento2/.
