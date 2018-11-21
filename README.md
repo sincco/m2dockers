@@ -41,11 +41,11 @@ You can specify the version that want install (e.g. `install-magento2 2.2`).
 
 When finished, you can access your panels with the ports that the script assigned to each one
 
-**Web server:** http://localhost:<port>
+**Web server:** http://localhost:port
 
-**PHPMyAdmin:** http://localhost:<port>
+**PHPMyAdmin:** http://localhost:port
 
-**Local emails:** http://localhost:<port>
+**Local emails:** http://localhost:port
 
 ### Features commands
 
@@ -73,7 +73,7 @@ or to run in the background using detached mode
 
 `$ docker-compose -f docker-compose.yml -f docker-compose.elasticsearch.yml up -d`
 
-**Elasticsearch:** http://localhost:<port>
+**Elasticsearch:** http://localhost:port
 
 ### License
 
