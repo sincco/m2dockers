@@ -73,7 +73,7 @@ or to run in the background using detached mode
 
 `$ docker-compose -f docker-compose.yml -f docker-compose.elasticsearch.yml up -d`
 
-**Elasticsearch:** http://localhost:9200
+**Elasticsearch:** http://localhost:<port>
 
 ### License
 
