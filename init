@@ -3,16 +3,6 @@ if [ "$2" == "clone" ]; then
   git clone https://github.com/sincco/m2dockers.git $1 && cd $1;
 fi
 
-if [ "$2" == "cli" ]; then
-  curl -sS https://accounts.magento.cloud/cli/installer | php
-  export PATH=$PATH:$HOME/.magento-cloud/bin
-fi
-
-if [ "$3" == "cli" ]; then
-  curl -sS https://accounts.magento.cloud/cli/installer | php
-  export PATH=$PATH:$HOME/.magento-cloud/bin
-fi
-
 git config --global core.autocrlf false
 git config --global core.eol LF
 git config --global core.fileMode false
@@ -48,5 +38,5 @@ if [ -d src/app/etc ]; then
 fi
 
 chmod -R 777 src
-./ports
+bash ports
 bash start

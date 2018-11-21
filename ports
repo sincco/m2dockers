@@ -28,3 +28,11 @@ sed -i -e "s/<puerto_phpmyadmin>/$puerto_phpmyadmin/g" docker-compose.yml
 sed -i -e "s/<puerto_redis>/$puerto_redis/g" docker-compose.yml
 sed -i -e "s/<puerto_mailhog1>/$puerto_mailhog1/g" docker-compose.yml
 sed -i -e "s/<puerto_mailhog2>/$puerto_mailhog2/g" docker-compose.yml
+
+echo "
+=================== 🚀 Starting 🚀 =================
+
+      🌎 Web server: http://localhost:$puerto_web
+      ⚙️ PHPMyAdmin: http://localhost:$puerto_phpmyadmin
+      ✉️ Local emails: http://localhost:$puerto_mailhog2
+"
