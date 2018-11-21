@@ -48,5 +48,5 @@ if [ -d src/app/etc ]; then
 fi
 
 chmod -R 777 src
-
+./ports
 bash start
