@@ -4,12 +4,11 @@ version=$(git describe --tags $(git rev-list --tags --max-count=1))
 echo "
 ===================== 🚀 Done 🚀 ===================
 
-      Created by Rafael Corrêa Gomes
       v.$version
       Access your new links:
 
-      🌎 Web server: http://localhost/
-      ⚙️ PHPMyAdmin: http://localhost:8080
-      ✉️ Local emails: http://localhost:8025
+      🌎 Web server: http://localhost:$puerto_web
+      ⚙️ PHPMyAdmin: http://localhost:$puerto_phpmyadmin
+      ✉️ Local emails: http://localhost:$puerto_mailhog2
 
 ===================== 🚀 Done 🚀 ==================="

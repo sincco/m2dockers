@@ -1,11 +1,11 @@
-version: '2'
+version: version: '2'
 services:
   apache:
-    image: rafaelcgstz/magento2
+    image: sincco/m2dockers
     # build: .
     ports:
-      - "80:80" # web
-      - "9001:9000" # xdebug
+      - "<puerto_web>:80" # web
+      - "<puerto_xdebug>:9000" # xdebug
       # - "35729:35729" # live reload
     volumes:
       - ./src:/var/www/html
@@ -25,7 +25,7 @@ services:
   db:
     image: mariadb
     ports:
-     - 3300:3306
+     - <puerto_db>:3306
     environment:
       - MYSQL_ROOT_PASSWORD=root
       - MYSQL_DATABASE=magento
@@ -44,29 +44,107 @@ services:
      - PMA_PASSWORD=root
      - MYSQL_ROOT_PASSWORD=root
     ports:
-     - 8080:80
+     - <puerto_phpmyadmin>:80
     networks:
       - <project_name>-network
 
   redis:
     image: redis
     ports:
-     - 6379
+     - <puerto_redis>
     networks:
       - <project_name>-network
 
   redis-session:
     image: redis
     ports:
-     - 6379
+     - <puerto_redis>
     networks:
       - <project_name>-network
 
   mailhog:
     image: mailhog/mailhog
     ports:
-      - 1025:1025
-      - 8025:8025
+      - <puerto_mailhog1>:1025
+      - <puerto_mailhog2>:8025
+    networks:
+      - <project_name>-network
+
+networks:
+  <project_name>-network:
+    driver: bridge
+
+volumes:
+  dbdata:
+    driver: local'2'
+services:
+  apache:
+    image: rafaelcgstz/magento2
+    # build: .
+    ports:
+      - "<puerto_web>:80" # web
+      - "<puerto_xdebug>:9000" # xdebug
+      # - "35729:35729" # live reload
+    volumes:
+      - ./src:/var/www/html
+      - ~/.composer:/var/www/.composer
+      - ~/.npm:/var/www/.npm
+      # - ~/.nvm:/var/www/.nvm
+    environment:
+      XDEBUG_CONFIG: "remote_host=localhost"
+      PHP_IDE_CONFIG: "serverName=Docker"
+    depends_on:
+      - db
+    links:
+      - db
+    networks:
+      - <project_name>-network
+
+  db:
+    image: mariadb
+    ports:
+     - <puerto_db>:3306
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=magento
+      - MYSQL_USER=magento
+      - MYSQL_PASSWORD=magento
+    volumes:
+      - dbdata:/var/lib/mysql
+    networks:
+      - <project_name>-network
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    environment:
+     - PMA_HOST=db
+     - PMA_USER=root
+     - PMA_PASSWORD=root
+     - MYSQL_ROOT_PASSWORD=root
+    ports:
+     - <puerto_phpmyadmin>:80
+    networks:
+      - <project_name>-network
+
+  redis:
+    image: redis
+    ports:
+     - <puerto_redis>
+    networks:
+      - <project_name>-network
+
+  redis-session:
+    image: redis
+    ports:
+     - <puerto_redis>
+    networks:
+      - <project_name>-network
+
+  mailhog:
+    image: mailhog/mailhog
+    ports:
+      - <puerto_mailhog1>:1025
+      - <puerto_mailhog2>:8025
     networks:
       - <project_name>-network
 
