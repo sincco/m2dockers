@@ -39,13 +39,13 @@ You can specify the version that want install (e.g. `install-magento2 2.2`).
 
 ### Panels
 
-Enjoy your new panels!
+When finished, you can access your panels with the ports that the script assigned to each one
 
-**Web server:** http://localhost/
+**Web server:** http://localhost:<port>
 
-**PHPMyAdmin:** http://localhost:8080
+**PHPMyAdmin:** http://localhost:<port>
 
-**Local emails:** http://localhost:8025
+**Local emails:** http://localhost:<port>
 
 ### Features commands
 
