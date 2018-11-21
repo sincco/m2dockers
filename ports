@@ -13,13 +13,13 @@ search_free_port () {
         done
 }
 
-export puerto_web=$(search_free_port 1)
+puerto_web=$(search_free_port 1)
 puerto_xdebug=$(search_free_port 2)
 puerto_db=$(search_free_port 3)
-export puerto_phpmyadmin=$(search_free_port 4)
+puerto_phpmyadmin=$(search_free_port 4)
 puerto_redis=$(search_free_port 5)
 puerto_mailhog1=$(search_free_port 6)
-export puerto_mailhog2=$(search_free_port 7)
+puerto_mailhog2=$(search_free_port 7)
 
 sed -i -e "s/<puerto_web>/$puerto_web/g" docker-compose.yml
 sed -i -e "s/<puerto_xdebug>/$puerto_xdebug/g" docker-compose.yml
@@ -30,7 +30,7 @@ sed -i -e "s/<puerto_mailhog1>/$puerto_mailhog1/g" docker-compose.yml
 sed -i -e "s/<puerto_mailhog2>/$puerto_mailhog2/g" docker-compose.yml
 
 echo "
-=================== 🚀 Starting 🚀 =================
+=================== 🌙 Starting 🌙 =================
 
       🌎 Web server: http://localhost:$puerto_web
       ⚙️ PHPMyAdmin: http://localhost:$puerto_phpmyadmin
