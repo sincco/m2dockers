@@ -1,7 +1,7 @@
 version: '2'
 services:
   apache:
-    image: sincco/m2dockers:php72
+    image: sincco/m2dockers:php71
     # build: .
     ports:
       - "<puerto_web>:80" # web
